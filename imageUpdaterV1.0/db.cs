@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using GriffithElder.Database.MySql;
+using GriffithElder.Utils;
 using MySql.Data.MySqlClient;
+
 
 namespace imageUpdaterV1._0
 {
     class db
     {
-        private MySqlConnection connection;
+        private MySqlConnection _connection;
         private string server;
         private string database;
         private string uid;
@@ -25,14 +27,31 @@ namespace imageUpdaterV1._0
         //Initialize values
         private void Initialize()
         {
-            server = "localhost";
-            database = "anpr";
-            uid = "root";
-            password = "GElderMySQL";
+          /* server name; either hostname or IP address */
+            server = "192.168.16.1"; 
+          //server = "192.168.16.122";
+          //server = "localhost"; 
+          /********************************************/
+
+           /****** database name ***********************/
+            database = "cameras";
+          //database = "anpr";
+           /*******************************************/
+
+           /******** database username ****************/
+            uid = "web";
+          //uid = "yuir_m" //allows remote connection
+          //uid = "root" //only allows connections from local machine
+
+           /************ database password ***************/
+            password = "//GE1981//Oakland5";
+          //password = "GElderMySQL";
+           /*********************************************/
+            
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            connection = new MySqlConnection(connectionString);
+            _connection = new MySqlConnection(connectionString);
         }
 
 
@@ -41,7 +60,7 @@ namespace imageUpdaterV1._0
         {
             try
             {
-                connection.Open();
+                _connection.Open();
                 Console.WriteLine("connected");
                 return true;
             }
@@ -70,7 +89,7 @@ namespace imageUpdaterV1._0
         {
             try
             {
-                connection.Close();
+                _connection.Close();
                 return true;
             }
             catch (MySqlException ex)
@@ -81,25 +100,65 @@ namespace imageUpdaterV1._0
         } //end of CloseConnection
 
         //Insert statement
-        public void Insert()
+        public void Insert(string query)
         {
-            string query = "insert into anpr.images values (null, current_timestamp(), 'ww04sks', 'F:\\dev\\imgUpdater\\imgUpdater\\bin\\Debug\\121212.jpg', 1, 'test data');";
+            //string query = "INSERT into images VALUES (null, current_timestamp(), 'cv55qok', 'image.jpg', 1, 'test data');";
 
             //open connection
+            //if (this.OpenConnection() == true)
+            try
+            {
+                _connection.Open();
+            
+                //create command and assign the query and connection from the constructor
+                using (MySqlCommand cmd = new MySqlCommand(query, _connection))
+                {
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Executed");
+                }
+
+            }  
+
+             catch (MySqlException ex)
+            {
+                Log.WriteLog(LogType.Database, ex);
+                throw ex;
+            }
+
+            finally
+            {
+                //close connection
+                this.CloseConnection();
+            }
+           
+            
+        }//end of insert method
+
+        //Update statement
+        public void Update(string query)
+        {
+            //string query = "UPDATE images SET `haul_name` = 'some companys vehicle' WHERE `reg_no` = 'ap16dfw' ;";
+           
+
+            //Open connection
             if (this.OpenConnection() == true)
             {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = _connection;
 
-                //Execute command
+                //Execute query
                 cmd.ExecuteNonQuery();
 
                 //close connection
                 this.CloseConnection();
             }
-        }
+        }// end of update method
 
-    
     
     } ///end of db class
       ///
