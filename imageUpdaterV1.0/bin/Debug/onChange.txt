@@ -157,3 +157,9 @@ File: F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\images (10
 images (10)
 File: F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\images (2).jpg Deleted images (2) 12/10/2017 15:28:14
 images (2)
+File: F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\rename1 - Copy.jpg Created rename1 - Copy 12/10/2017 16:10:18
+rename1 - Copy
+File: F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\rename1-Copy - Copy.jpg Created rename1-Copy - Copy 12/10/2017 16:11:51
+rename1-Copy - Copy
+File: F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\rename1-Copy - Copy.jpg Deleted rename1-Copy - Copy 12/10/2017 16:13:20
+rename1-Copy - Copy

@@ -83,7 +83,7 @@ namespace imageUpdaterV1._0
 
 
                 }
-             string query = "INSERT into `cameras`.`images` VALUES (null, current_timestamp(), '" + filename + "','" + e.Name + "', 1 , '" + e.FullPath + "');";
+             string query = "INSERT into `images` VALUES (null, current_timestamp(), '" + filename + "','" + e.Name + "', 1 , '" + e.FullPath + "');";
             //string query = "insert into `images` values (null, current_timestamp(), 'cv55qok', 'image.jpg', 1, 'test data');"; 
             database.Insert(query);
 

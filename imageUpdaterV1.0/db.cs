@@ -28,24 +28,24 @@ namespace imageUpdaterV1._0
         private void Initialize()
         {
           /* server name; either hostname or IP address */
-            server = "192.168.16.1"; 
-          //server = "192.168.16.122";
+          //server = "192.168.16.1"; 
+          server = "192.168.16.122";
           //server = "localhost"; 
           /********************************************/
 
            /****** database name ***********************/
-            database = "cameras";
-          //database = "anpr";
+          //database = "cameras";
+            database = "anpr";
            /*******************************************/
 
            /******** database username ****************/
-            uid = "web";
-          //uid = "yuir_m" //allows remote connection
+          //uid = "web";
+            uid = "yuri_m"; //allows remote connection
           //uid = "root" //only allows connections from local machine
 
            /************ database password ***************/
-            password = "//GE1981//Oakland5";
-          //password = "GElderMySQL";
+          //password = "//GE1981//Oakland5";
+            password = "GElderMySQL";
            /*********************************************/
             
             string connectionString;
