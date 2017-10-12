@@ -34,18 +34,18 @@ namespace imageUpdaterV1._0
           /********************************************/
 
            /****** database name ***********************/
-            database = "cameras";
-          //database = "anpr";
+            database = "";
+          //database = "";
            /*******************************************/
 
            /******** database username ****************/
-            uid = "web";
-          //uid = "yuir_m" //allows remote connection
-          //uid = "root" //only allows connections from local machine
+            uid = "";
+          //uid = "" //allows remote connection
+          //uid = "" //only allows connections from local machine
 
            /************ database password ***************/
-            password = "//GE1981//Oakland5";
-          //password = "GElderMySQL";
+            password = "****";
+          //password = "****";
            /*********************************************/
             
             string connectionString;
