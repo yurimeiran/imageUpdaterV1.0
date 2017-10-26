@@ -15,5 +15,5 @@ F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\MySql.Data.dll
 F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\GriffithElder.pdb
 F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\GriffithElder.Utils.dll
 F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\GriffithElder.Utils.pdb
-F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\obj\Debug\imageUpdaterV1.0.csprojResolveAssemblyReference.cache
 F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\bin\Debug\imageUpdaterV1.0.exe.config
+F:\dev\imageUpdaterV1.0\imageUpdater\imageUpdaterV1.0\obj\Debug\imageUpdaterV1.0.csprojResolveAssemblyReference.cache

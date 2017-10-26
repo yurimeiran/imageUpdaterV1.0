@@ -28,26 +28,28 @@ namespace imageUpdaterV1._0
         private void Initialize()
         {
           /* server name; either hostname or IP address */
-          //server = "192.168.16.1"; 
-          server = "192.168.16.122";
-          //server = "localhost"; 
+          //server = "192.168.16.1"; //griffith elder database
+          server = "192.168.16.122"; //database on my pc
+          //server = "localhost"; //any db on any local pc
           /********************************************/
 
            /****** database name ***********************/
-          //database = "cameras";
-            database = "anpr";
+          //database = "cameras"; //db on griffith elder server
+            database = "anpr"; // db on my local pc
+            //database = "gecam"; //db on gecam server
            /*******************************************/
 
            /******** database username ****************/
-          //uid = "web";
-            uid = "yuri_m"; //allows remote connection
-          //uid = "root" //only allows connections from local machine
+          //uid = "web"; //griffith elder db username
+            uid = "yuri_m"; //username on local pc's db, allows remote connection
+            //uid = "root";//username on local pc's db, only allows connections from local machine
 
            /************ database password ***************/
           //password = "//GE1981//Oakland5";
             password = "GElderMySQL";
+            //password = "GEC2017";
            /*********************************************/
-            
+    
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
@@ -102,8 +104,7 @@ namespace imageUpdaterV1._0
         //Insert statement
         public void Insert(string query)
         {
-            //string query = "INSERT into images VALUES (null, current_timestamp(), 'cv55qok', 'image.jpg', 1, 'test data');";
-
+           
             //open connection
             //if (this.OpenConnection() == true)
             try
@@ -138,9 +139,7 @@ namespace imageUpdaterV1._0
         //Update statement
         public void Update(string query)
         {
-            //string query = "UPDATE images SET `haul_name` = 'some companys vehicle' WHERE `reg_no` = 'ap16dfw' ;";
            
-
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -158,6 +157,21 @@ namespace imageUpdaterV1._0
                 this.CloseConnection();
             }
         }// end of update method
+
+        public void Delete(string query)
+        {
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                if (this.OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _connection);
+                    cmd.ExecuteNonQuery();
+                    this.CloseConnection();
+                }
+            }
+        }// end of delete method
 
     
     } ///end of db class
