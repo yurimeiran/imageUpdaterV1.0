@@ -28,26 +28,26 @@ namespace imageUpdaterV1._0
         private void Initialize()
         {
           /* server name; either hostname or IP address */
-          //server = "192.168.16.1"; //griffith elder database
-          server = "192.168.16.122"; //database on my pc
+          //server = "***********"; //**********
+          server = "***.***.***."; //database on my pc
           //server = "localhost"; //any db on any local pc
           /********************************************/
 
            /****** database name ***********************/
-          //database = "cameras"; //db on griffith elder server
-            database = "anpr"; // db on my local pc
-            //database = "gecam"; //db on gecam server
+          //database = "*****"; //*********
+            database = "*****"; // db on my local pc
+            //database = "******"; //db on **** server
            /*******************************************/
 
            /******** database username ****************/
-          //uid = "web"; //griffith elder db username
-            uid = "yuri_m"; //username on local pc's db, allows remote connection
-            //uid = "root";//username on local pc's db, only allows connections from local machine
+          //uid = "****"; //griffith elder db username
+            uid = "******"; //username on local pc's db, allows remote connection
+            //uid = "****";//username on local pc's db, only allows connections from local machine
 
            /************ database password ***************/
-          //password = "//GE1981//Oakland5";
-            password = "GElderMySQL";
-            //password = "GEC2017";
+          //password = "//";
+            password = "******";
+            //password = "*******";
            /*********************************************/
     
             string connectionString;
