@@ -66,7 +66,7 @@ namespace imageUpdaterV1._0
                 string ip_address;
                 ip_address = filename.Remove(filename.LastIndexOf("_"));
 
-                if (ip_address == "10.0.14.17")
+                if (ip_address == "***.***.***.***")
                 {
                     cam_no = ip_address.Replace(ip_address, "1");
                 }
